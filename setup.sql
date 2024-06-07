@@ -54,22 +54,23 @@ CREATE TABLE Inventory (
 # Add table "Sales Contracts"                                            #
 # ---------------------------------------------------------------------- #
 
--- Table 4: sales_contracts
--- -------------------------
--- Columns:
---  you decide
---  id should be auto-incremented
---  use a foreign key (VIN) to link to the vehicle
+CREATE TABLE Sales_Contracts (
+	id int NOT NULL auto_increment,
+	Date int NOT NULL,
+    Customer_Name varchar(50) NOT NULL,
+    Customer_Email varchar(254) NOT NULL,
+    VIN int,
+    Finance_Option varchar(11) NOT NULL, -- e.g. "Not Financed"
+    Total_Price decimal(10, 2) NOT NULL,
+    Monthly_Payment decimal(10, 2) NOT NULL,
+	PRIMARY KEY (id)
+);
 
 # ---------------------------------------------------------------------- #
 # Add table "Dealerships"                                                #
 # ---------------------------------------------------------------------- #
 
-
-
-
-
-# ---------------------------------------------------------------------- #
-# Add table "Dealerships"                                                #
-# ---------------------------------------------------------------------- #
-
+lease_contracts 
+you decide;
+id should be auto-incremented;
+use a foreign key (VIN) to link to the vehicle;
