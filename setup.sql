@@ -31,30 +31,35 @@ CREATE TABLE Dealerships (
 CREATE TABLE Vehicles (
 	VIN int NOT NULL,
 	Year int NOT NULL,
-	MakeName varchar(30) NOT NULL,
-	ModelName varchar(60) NOT NULL,
-	VehicleType varchar(25) NOT NULL,
-	VehicleColor varchar(25),
+	Make_Name varchar(30) NOT NULL,
+	Model_Name varchar(60) NOT NULL,
+	Vehicle_Type varchar(25) NOT NULL,
+	Vehicle_Color varchar(25),
 	Mileage int NOT NULL,
-	VehiclePrice decimal(10,2) NOT NULL,
+	Vehicle_Price decimal(10,2) NOT NULL,
 	SOLD varchar(3) NOT NULL,
 	PRIMARY KEY (VIN)
 );
 
 # ---------------------------------------------------------------------- #
-# Add table "Dealerships"                                                #
+# Add table "Inventory"                                                  #
 # ---------------------------------------------------------------------- #
 
-
-
-
+CREATE TABLE Inventory (
+	 Dealership_id int,
+	 VIN int
+);
 
 # ---------------------------------------------------------------------- #
-# Add table "Dealerships"                                                #
+# Add table "Sales Contracts"                                            #
 # ---------------------------------------------------------------------- #
 
-
-
+-- Table 4: sales_contracts
+-- -------------------------
+-- Columns:
+--  you decide
+--  id should be auto-incremented
+--  use a foreign key (VIN) to link to the vehicle
 
 # ---------------------------------------------------------------------- #
 # Add table "Dealerships"                                                #
