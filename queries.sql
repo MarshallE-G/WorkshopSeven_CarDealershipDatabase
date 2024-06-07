@@ -4,4 +4,6 @@
 
 -- SELECT * FROM inventory;
 
-SELECT * FROM Sales_Contracts;
+-- SELECT * FROM Sales_Contracts;
+
+SELECT * FROM Lease_Contracts;

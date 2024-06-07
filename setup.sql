@@ -55,7 +55,7 @@ CREATE TABLE Inventory (
 # ---------------------------------------------------------------------- #
 
 CREATE TABLE Sales_Contracts (
-	id int NOT NULL auto_increment,
+	Sales_id int NOT NULL auto_increment,
 	Date int NOT NULL,
     Customer_Name varchar(50) NOT NULL,
     Customer_Email varchar(254) NOT NULL,
@@ -63,14 +63,19 @@ CREATE TABLE Sales_Contracts (
     Finance_Option varchar(11) NOT NULL, -- e.g. "Not Financed"
     Total_Price decimal(10, 2) NOT NULL,
     Monthly_Payment decimal(10, 2) NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (Sales_id)
 );
 
 # ---------------------------------------------------------------------- #
-# Add table "Dealerships"                                                #
+# Add table "Lease Contracts"                                            #
 # ---------------------------------------------------------------------- #
 
-lease_contracts 
-you decide;
-id should be auto-incremented;
-use a foreign key (VIN) to link to the vehicle;
+CREATE TABLE Lease_Contracts (
+	Lease_id int NOT NULL auto_increment,
+	Date int NOT NULL,
+    Customer_Name varchar(50) NOT NULL,
+    Customer_Email varchar(254) NOT NULL,
+    VIN int,
+    Expected_End_Value decimal(10,2) NOT NULL,
+    PRIMARY KEY (Lease_id)
+);
