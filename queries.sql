@@ -39,12 +39,18 @@
 -- 													AND Model_Name LIKE 'Explorer'));
 
 -- Query 6
+
+
 SELECT Dealership_id
-	FROM Inventory
-	WHERE VIN IN (SELECT VIN
-					FROM Sales_Contracts)
-		OR VIN IN (SELECT VIN
-					FROM Lease_Contracts);
+	FROM Dealerships
+    WHERE Dealership_id = 1;
+
+-- SELECT Dealership_id
+-- 	FROM Inventory
+-- 	WHERE VIN IN (SELECT VIN
+-- 					FROM Sales_Contracts)
+-- 		OR VIN IN (SELECT VIN
+-- 					FROM Lease_Contracts);
 
 -- SELECT *
 -- 	FROM Sales_Contracts AS s
