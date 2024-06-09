@@ -77,5 +77,23 @@ CREATE TABLE Lease_Contracts (
     Customer_Email varchar(254) NOT NULL,
     VIN int,
     Expected_End_Value decimal(10,2) NOT NULL,
+	Total_Price decimal(10, 2) NOT NULL,
+    Monthly_Payment decimal(10, 2) NOT NULL,
     PRIMARY KEY (Lease_id)
 );
+
+TRUNCATE Dealerships;
+INSERT INTO dealerships (name, address, phone)
+	VALUES('D & B Used Cars', '111 Old Benbrook Rd', '817-555-5555');
+
+TRUNCATE Vehicles;
+
+
+TRUNCATE Inventory;
+
+
+TRUNCATE Sales_Contracts;
+
+
+TRUNCATE Lease_Contracts;
+
