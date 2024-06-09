@@ -39,10 +39,8 @@
 -- 													AND Model_Name LIKE 'Explorer'));
 
 -- Query 6
-
-
-SELECT Dealership_id
-	FROM Dealerships
+SELECT VIN
+	FROM Inventory
     WHERE Dealership_id = 1;
 
 -- SELECT Dealership_id
