@@ -28,14 +28,17 @@
 -- 								WHERE VIN = 12345);
 
 -- Query 5
+-- SELECT *
+-- 	FROM Dealerships
+--     WHERE Dealership_id IN (SELECT Dealership_id
+-- 								FROM Inventory
+-- 								WHERE VIN IN (SELECT VIN
+-- 												FROM Vehicles
+-- 												WHERE Vehicle_Color LIKE 'Red' 
+-- 													AND Make_Name LIKE 'Ford'
+-- 													AND Model_Name LIKE 'Explorer'));
+
+-- Query 6
 SELECT *
-	FROM Dealerships
-    WHERE Dealership_id IN (SELECT Dealership_id
-								FROM Inventory
-								WHERE VIN IN (SELECT VIN
-												FROM Vehicles
-												WHERE Vehicle_Color LIKE 'Red' 
-													AND Make_Name LIKE 'Ford'
-													AND Model_Name LIKE 'Explorer'));
-
-
+	FROM Sales_Contracts AS s_c
+    WHERE s_c.Contract_Date BETWEEN 20240000 AND 20250000;
