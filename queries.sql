@@ -21,8 +21,14 @@
 -- 	WHERE i.VIN = 12345;
 
 -- Alternative to query 4
-SELECT *
-	FROM Dealerships
-    WHERE Dealership_id IN (SELECT Dealership_id
-								FROM Inventory
-								WHERE VIN = 12345);
+-- SELECT *
+-- 	FROM Dealerships
+--     WHERE Dealership_id IN (SELECT Dealership_id
+-- 								FROM Inventory
+-- 								WHERE VIN = 12345);
+
+SELECT VIN
+	FROM Vehicles
+    WHERE Vehicle_Color LIKE 'Red' 
+		AND Make_Name LIKE 'Ford'
+        AND Model_Name LIKE 'Explorer';
