@@ -39,6 +39,10 @@
 -- 													AND Model_Name LIKE 'Explorer'));
 
 -- Query 6
+-- SELECT *
+-- 	FROM Sales_Contracts AS s
+--     WHERE s.Contract_Date BETWEEN 20240000 AND 20250000;
+
 SELECT *
-	FROM Sales_Contracts AS s_c
-    WHERE s_c.Contract_Date BETWEEN 20240000 AND 20250000;
+	FROM Lease_Contracts AS l
+    WHERE l.Contract_Date BETWEEN 20240000 AND 20250000;
