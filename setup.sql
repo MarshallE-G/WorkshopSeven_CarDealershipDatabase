@@ -17,10 +17,10 @@ USE dealership_db;
 
 CREATE TABLE Dealerships (
 	Dealership_id int NOT NULL auto_INCREMENT,
-	Name varchar(50) NOT NULL,
-	Address varchar(50),
-	Phone varchar(12),
-    PRIMARY KEY (dealership_id)
+	Dealership_Name varchar(50) NOT NULL,
+	Dealership_Address varchar(50),
+	Dealership_Phone varchar(12),
+    PRIMARY KEY (Dealership_id)
  );
 
 
@@ -56,7 +56,7 @@ CREATE TABLE Inventory (
 
 CREATE TABLE Sales_Contracts (
 	Sales_id int NOT NULL auto_increment,
-	Date int NOT NULL,
+	Contract_Date int NOT NULL,
     Customer_Name varchar(50) NOT NULL,
     Customer_Email varchar(255) NOT NULL,
     VIN int,
@@ -72,7 +72,7 @@ CREATE TABLE Sales_Contracts (
 
 CREATE TABLE Lease_Contracts (
 	Lease_id int NOT NULL auto_increment,
-	Date int NOT NULL,
+	Contract_Date int NOT NULL,
     Customer_Name varchar(50) NOT NULL,
     Customer_Email varchar(254) NOT NULL,
     VIN int,
