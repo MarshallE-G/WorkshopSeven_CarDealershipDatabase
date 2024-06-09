@@ -27,8 +27,15 @@
 -- 								FROM Inventory
 -- 								WHERE VIN = 12345);
 
-SELECT VIN
-	FROM Vehicles
-    WHERE Vehicle_Color LIKE 'Red' 
-		AND Make_Name LIKE 'Ford'
-        AND Model_Name LIKE 'Explorer';
+-- Query 5
+SELECT *
+	FROM Dealerships
+    WHERE Dealership_id IN (SELECT Dealership_id
+								FROM Inventory
+								WHERE VIN IN (SELECT VIN
+												FROM Vehicles
+												WHERE Vehicle_Color LIKE 'Red' 
+													AND Make_Name LIKE 'Ford'
+													AND Model_Name LIKE 'Explorer'));
+
+
