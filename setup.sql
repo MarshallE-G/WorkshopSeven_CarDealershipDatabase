@@ -83,11 +83,13 @@ CREATE TABLE Lease_Contracts (
 );
 
 TRUNCATE Dealerships;
-INSERT INTO dealerships (name, address, phone)
-	VALUES('D & B Used Cars', '111 Old Benbrook Rd', '817-555-5555');
+INSERT INTO dealerships	VALUES (null, 'D & B Used Cars', '111 Old Benbrook Rd', '817-555-5555');
 
 TRUNCATE Vehicles;
-
+INSERT INTO vehicles VALUES	(null, 10112, 1993, 'Ford', 'Explorer', 'SUV', 'Red', 525123, 995.00, 'NO');
+INSERT INTO vehicles VALUES	(null, 37846, 2001, 'Ford', 'Ranger', 'truck', 'Yellow', 172544, 1995.00, 'NO');
+INSERT INTO vehicles VALUES	(null, 44901, 2012, 'Honda', 'Civic', 'SUV', 'Gray', 103221, 6995.00, 'NO');
+INSERT INTO vehicles VALUES	(null, 72105, 2013, 'Chevrolet', 'Malibu', 'Sedan', 'Blue', 98345, 7995.00, 'NO');
 
 TRUNCATE Inventory;
 
