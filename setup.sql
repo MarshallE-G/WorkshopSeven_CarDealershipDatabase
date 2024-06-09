@@ -101,4 +101,4 @@ TRUNCATE Sales_Contracts;
 INSERT INTO Sales_Contracts VALUES (null, 20240518, 'Mars Hall', 'mhall@aol.com', 78901, 'Financed', 11620.00, 493.85);
 
 TRUNCATE Lease_Contracts;
-
+INSERT INTO Lease_Contracts VALUES (null, 20240518, 'Mars Hall', 'mhall@aol.com', 12345, 2750.00, 3135.00, 125.40);
