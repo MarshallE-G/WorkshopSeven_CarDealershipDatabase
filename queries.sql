@@ -39,17 +39,30 @@
 -- 													AND Model_Name LIKE 'Explorer'));
 
 -- Query 6
-SELECT s.Sales_id, l.Lease_id
-	FROM Sales_Contracts AS s
-    JOIN Lease_Contracts AS l
-		ON Dealership_id IN (SELECT Dealership_id
-						FROM Inventory
-                        WHERE Dealership_id = 1
-                        AND SOLD IN (SELECT SOLD
-										FROM Vehicles
-                                        WHERE SOLD = 'YES'));
+SELECT i.*, Year, Make_Name, Model_Name, Vehicle_Type, Vehicle_Color, Mileage, Vehicle_Price, SOLD
+	FROM Inventory AS i
+    JOIN Vehicles AS v
+		ON i.VIN = v.VIN
+	WHERE i.Dealership_id IN (SELECT Dealership_id
+								FROM Inventory
+								WHERE Dealership_id = 1
+									AND (VIN IN (SELECT VIN
+												FROM Sales_Contracts
+                                                WHERE Contract_Date BETWEEN 20240000 AND 20250000)
+									OR VIN IN (SELECT VIN
+												FROM Lease_Contracts
+                                                WHERE Contract_Date BETWEEN 20240000 AND 20250000)));
 
 
+-- SELECT s.Sales_id, l.Lease_id
+-- 	FROM Sales_Contracts AS s
+--     JOIN Lease_Contracts AS l
+-- 		ON Dealership_id IN (SELECT Dealership_id
+-- 						FROM Inventory
+--                         WHERE Dealership_id = 1
+--                         AND SOLD IN (SELECT SOLD
+-- 										FROM Vehicles
+--                                         WHERE SOLD = 'YES'));
 
 -- SELECT d.Dealership_id, s.*
 -- 	FROM Sales_Contracts AS s
