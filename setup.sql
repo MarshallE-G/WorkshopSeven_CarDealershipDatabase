@@ -33,8 +33,8 @@ CREATE TABLE Vehicles (
 	Year int NOT NULL,
 	Make_Name varchar(30) NOT NULL,
 	Model_Name varchar(60) NOT NULL,
-	Vehicle_Type varchar(25) NOT NULL,
-	Vehicle_Color varchar(25),
+	Vehicle_Type varchar(30) NOT NULL,
+	Vehicle_Color varchar(45),
 	Mileage int NOT NULL,
 	Vehicle_Price decimal(10,2) NOT NULL,
 	SOLD varchar(3) NOT NULL,
@@ -58,9 +58,9 @@ CREATE TABLE Sales_Contracts (
 	Sales_id int NOT NULL auto_increment,
 	Date int NOT NULL,
     Customer_Name varchar(50) NOT NULL,
-    Customer_Email varchar(254) NOT NULL,
+    Customer_Email varchar(255) NOT NULL,
     VIN int,
-    Finance_Option varchar(11) NOT NULL, -- e.g. "Not Financed"
+    Finance_Option varchar(12) NOT NULL, -- e.g. "Not Financed"
     Total_Price decimal(10, 2) NOT NULL,
     Monthly_Payment decimal(10, 2) NOT NULL,
 	PRIMARY KEY (Sales_id)
