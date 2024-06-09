@@ -45,10 +45,16 @@ SELECT d.Dealership_id, s.*
 		ON d.Dealership_id IN (SELECT Dealership_id
 								FROM Inventory
 								WHERE VIN IN (SELECT VIN
-												FROM Sales_Contracts)
-								OR VIN IN (SELECT VIN
-											FROM Lease_Contracts));
-		
+												FROM Sales_Contracts))
+UNION
+SELECT d.Dealership_id, l.*
+	FROM Lease_Contracts AS l
+	JOIN Dealerships AS d
+		ON d.Dealership_id IN (SELECT Dealership_id
+								FROM Inventory
+								WHERE VIN IN (SELECT VIN
+												FROM Lease_Contracts));
+
 
 -- SELECT VIN
 -- 	FROM Inventory
