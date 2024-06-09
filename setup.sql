@@ -83,22 +83,22 @@ CREATE TABLE Lease_Contracts (
 );
 
 TRUNCATE TABLE Dealerships;
-INSERT INTO dealerships	VALUES (null, 'D & B Used Cars', '111 Old Benbrook Rd', '817-555-5555');
+INSERT INTO Dealerships	VALUES (null, 'D & B Used Cars', '111 Old Benbrook Rd', '817-555-5555');
 
 TRUNCATE TABLE Vehicles;
-INSERT INTO vehicles VALUES	(null, 10112, 1993, 'Ford', 'Explorer', 'SUV', 'Red', 525123, 995.00, 'NO');
-INSERT INTO vehicles VALUES	(null, 37846, 2001, 'Ford', 'Ranger', 'truck', 'Yellow', 172544, 1995.00, 'NO');
-INSERT INTO vehicles VALUES	(null, 44901, 2012, 'Honda', 'Civic', 'SUV', 'Gray', 103221, 6995.00, 'NO');
-INSERT INTO vehicles VALUES	(null, 72105, 2013, 'Chevrolet', 'Malibu', 'Sedan', 'Blue', 98345, 7995.00, 'NO');
+INSERT INTO Vehicles VALUES	(null, 10112, 1993, 'Ford', 'Explorer', 'SUV', 'Red', 525123, 995.00, 'NO');
+INSERT INTO Vehicles VALUES	(null, 37846, 2001, 'Ford', 'Ranger', 'truck', 'Yellow', 172544, 1995.00, 'NO');
+INSERT INTO Vehicles VALUES	(null, 44901, 2012, 'Honda', 'Civic', 'SUV', 'Gray', 103221, 6995.00, 'NO');
+INSERT INTO Vehicles VALUES	(null, 72105, 2013, 'Chevrolet', 'Malibu', 'Sedan', 'Blue', 98345, 7995.00, 'NO');
 
 TRUNCATE TABLE Inventory;
-INSERT INTO inventory VALUES (1, 10112);
-INSERT INTO inventory VALUES (1, 37846);
-INSERT INTO inventory VALUES (1, 44901);
-INSERT INTO inventory VALUES (1, 72105);
+INSERT INTO Inventory VALUES (1, 10112);
+INSERT INTO Inventory VALUES (1, 37846);
+INSERT INTO Inventory VALUES (1, 44901);
+INSERT INTO Inventory VALUES (1, 72105);
 
 TRUNCATE Sales_Contracts;
-
+INSERT INTO Sales_Contracts VALUES (null, 20240518, 'Mars Hall', 'mhall@aol.com', 78901, 'Financed', 11620.00, 493.85);
 
 TRUNCATE Lease_Contracts;
 
