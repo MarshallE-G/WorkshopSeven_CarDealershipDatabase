@@ -37,7 +37,7 @@ CREATE TABLE Vehicles (
 	Vehicle_Color varchar(25),
 	Mileage int NOT NULL,
 	Vehicle_Price decimal(10,2) NOT NULL,
-	SOLD varchar(3),
+	SOLD varchar(3) NOT NULL,
 	PRIMARY KEY (VIN)
 );
 
