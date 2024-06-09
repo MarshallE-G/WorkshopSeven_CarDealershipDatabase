@@ -39,21 +39,33 @@
 -- 													AND Model_Name LIKE 'Explorer'));
 
 -- Query 6
-SELECT d.Dealership_id, s.*
+SELECT s.Sales_id, l.Lease_id
 	FROM Sales_Contracts AS s
-    JOIN Dealerships AS d
-		ON d.Dealership_id IN (SELECT Dealership_id
-								FROM Inventory
-								WHERE VIN IN (SELECT VIN
-												FROM Sales_Contracts))
-UNION
-SELECT d.Dealership_id, l.*
-	FROM Lease_Contracts AS l
-	JOIN Dealerships AS d
-		ON d.Dealership_id IN (SELECT Dealership_id
-								FROM Inventory
-								WHERE VIN IN (SELECT VIN
-												FROM Lease_Contracts));
+    JOIN Lease_Contracts AS l
+		ON Dealership_id IN (SELECT Dealership_id
+						FROM Inventory
+                        WHERE Dealership_id = 1
+                        AND SOLD IN (SELECT SOLD
+										FROM Vehicles
+                                        WHERE SOLD = 'YES'));
+
+
+
+-- SELECT d.Dealership_id, s.*
+-- 	FROM Sales_Contracts AS s
+--     JOIN Dealerships AS d
+-- 		ON d.Dealership_id IN (SELECT Dealership_id
+-- 								FROM Inventory
+-- 								WHERE VIN IN (SELECT VIN
+-- 												FROM Sales_Contracts))
+-- UNION
+-- SELECT d.Dealership_id, l.*
+-- 	FROM Lease_Contracts AS l
+-- 	JOIN Dealerships AS d
+-- 		ON d.Dealership_id IN (SELECT Dealership_id
+-- 								FROM Inventory
+-- 								WHERE VIN IN (SELECT VIN
+-- 												FROM Lease_Contracts));
 
 
 -- SELECT VIN
