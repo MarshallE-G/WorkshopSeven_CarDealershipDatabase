@@ -46,10 +46,12 @@ CREATE TABLE `vehicles` (
 # ---------------------------------------------------------------------- #
 
 CREATE TABLE `inventory` (
-	 `dealership_id` INTEGER NOT NULL,
-	 `VIN` INTEGER NOT NULL,
-     FOREIGN KEY (`dealership_id`) REFERENCES `dealerships` (`dealership_id`),
-     FOREIGN KEY (`VIN`) REFERENCES `vehicles` (`VIN`)
+	`inventory_id` INTEGER NOT NULL AUTO_INCREMENT,
+	`dealership_id` INTEGER NOT NULL,
+	`VIN` INTEGER NOT NULL,
+    FOREIGN KEY (`dealership_id`) REFERENCES `dealerships` (`dealership_id`),
+    FOREIGN KEY (`VIN`) REFERENCES `vehicles` (`VIN`),
+    PRIMARY KEY (`inventory_id`)
 );
 
 # ---------------------------------------------------------------------- #
